@@ -26,7 +26,7 @@
   </a>
   &nbsp;&nbsp;
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=patrizzzz&layout=compact&theme=transparent&hide_border=true" alt="patrizzzz's Top Langs" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=patrizzzz&theme=transparent&hide_border=true&title_color=0891b2" alt="patrizzzz's Top Langs" />
   </a>
 </p>
 
