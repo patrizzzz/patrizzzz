@@ -223,8 +223,8 @@ def generate_svg(s):
         <path d="M25 58C25 54 30 51 40 51C50 51 55 54 55 58V62H25V58Z" stroke="#0891b2" stroke-width="2.5"/>
         
         <g transform="translate(110, 5)">
-            <text x="0" y="8" class="text subheader">⚔ SOFTWARE DEVELOPER &amp; AI ENGINEER</text>
-            <text x="0" y="42" class="text header">PATRICK</text>
+            <text x="0" y="8" class="text subheader">⚔ SOFTWARE DEVELOPER</text>
+            <text x="0" y="42" class="text header">PATRIZZZZ</text>
             
             <g transform="translate(0, 55)">
                 <rect width="60" height="24" rx="4" class="lvl-badge"/>

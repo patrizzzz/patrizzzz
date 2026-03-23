@@ -29,8 +29,8 @@
 ## `> whoami`
 
 ```python
-class Patrick:
-    role        = ["Software Developer", "Aspiring AI Engineer"]
+class Patrizzzz:
+    role        = ["Software Developer"]
     location    = "🇵🇭 Philippines"
     focus       = ["Machine Learning", "Backend Systems", "Mobile Dev"]
     learning    = ["Deep Learning", "MLOps", "System Design"]
