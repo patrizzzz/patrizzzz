@@ -182,7 +182,7 @@ def generate_svg(s):
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     
     # SVG Dimensions
-    W, H = 840, 560
+    W, H = 840, 650
     
     # Progress bar width calculations
     def get_bar_w(val, max_w=320):
@@ -197,10 +197,10 @@ def generate_svg(s):
     ]
     
     skill_tags = ""
-    x_off, y_off = 40, 435
+    x_off, y_off = 0, 25
     for i, (name, color) in enumerate(all_skills):
         if i == 4 or i == 8: # wrap to next line
-            x_off = 40
+            x_off = 0
             y_off += 35
         tag_w = len(name) * 8 + 20
         skill_tags += f"""
@@ -306,15 +306,15 @@ def generate_svg(s):
     </g>
 
     <!-- Skills Section -->
-    <g transform="translate(40, 450)">
-        <text x="0" y="-45" class="text subheader">── EQUIPPED SKILLS ─────────────────</text>
+    <g transform="translate(40, 480)">
+        <text x="0" y="0" class="text subheader">── EQUIPPED SKILLS ─────────────────</text>
         {skill_tags}
     </g>
 
-    <line x1="40" y1="525" x2="{W-40}" y2="525" stroke="#333" stroke-dasharray="4 4"/>
+    <line x1="40" y1="615" x2="{W-40}" y2="615" stroke="#333" stroke-dasharray="4 4"/>
 
     <!-- Footer -->
-    <g transform="translate(40, 545)">
+    <g transform="translate(40, 635)">
         <circle cx="5" cy="-4" r="3" class="status-dot"/>
         <text x="15" y="0" class="footer-text">Active – Building in public</text>
         
