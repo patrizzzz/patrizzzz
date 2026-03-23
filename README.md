@@ -1,3 +1,9 @@
+<!--RPG_CARD_START-->
+<div align="center">
+  <img src="./rpg-card.svg" alt="RPG Character Card" width="100%" />
+</div>
+<!--RPG_CARD_END-->
+
 <div align="center">
 
 ```
@@ -63,16 +69,6 @@ class Patrizzzz:
 ![CSS3](https://img.shields.io/badge/CSS3-0d1117?style=flat-square&logo=css3&logoColor=1572B6)
 ![Kotlin](https://img.shields.io/badge/Kotlin-0d1117?style=flat-square&logo=kotlin&logoColor=7F52FF)
 ![Android](https://img.shields.io/badge/Android-0d1117?style=flat-square&logo=android&logoColor=3DDC84)
-
----
-
-## `> character --stats`
-
-<!--RPG_CARD_START-->
-<div align="center">
-  <img src="./rpg-card.svg" alt="RPG Character Card" width="100%" />
-</div>
-<!--RPG_CARD_END-->
 
 ---
 
