@@ -92,6 +92,15 @@ def get_contribution_streak():
     except Exception:
         return 0, 0
 
+def get_merged_pr_count():
+    """Count merged pull requests by the user."""
+    r = requests.get(
+        "https://api.github.com/search/issues",
+        headers=HEADERS,
+        params={"q": f"author:{USERNAME} type:pr is:merged", "per_page": 1},
+    )
+    return r.json().get("total_count", 0)
+
 # ── Stat calculation ──────────────────────────────────────────────────────────
 
 # Which languages map to which RPG stat
@@ -134,8 +143,9 @@ def calc_stats(repos, commits, streak):
     # VIT = commit activity (capped 99)
     vit_val = min(int(commits / 50) + 40, 99)
 
-    # XP = stars × 200 + forks × 100 + commits × 10
-    xp = total_stars * 200 + total_forks * 100 + commits * 10
+    # XP = stars × 200 + forks × 100 + commits × 10 + merged_prs × 50
+    merged_prs = kwargs.get("merged_prs", 0)
+    xp = total_stars * 200 + total_forks * 100 + commits * 10 + merged_prs * 50
 
     # Level = sqrt(xp / 1000) capped at 99
     import math
@@ -152,6 +162,7 @@ def calc_stats(repos, commits, streak):
         "WIS": wis_val, "AGI": agi_val, "VIT": vit_val,
         "level": level, "xp": xp, "xp_pct": xp_pct,
         "stars": total_stars, "streak": streak, "commits": commits,
+        "merged_prs": merged_prs,
         "repos": len([r for r in repos if not r.get("fork")]),
     }
 
@@ -372,11 +383,12 @@ if __name__ == "__main__":
         user    = get_user()
         repos   = get_repos()
         commits = get_commit_count()
+        prs     = get_merged_pr_count()
         total_contributions, streak = get_contribution_streak()
 
-        print(f"  • {len(repos)} repos | {commits} commits | {streak}d streak")
+        print(f"  • {len(repos)} repos | {commits} commits | {prs} PRs | {streak}d streak")
 
-        stats = calc_stats(repos, commits, streak)
+        stats = calc_stats(repos, commits, streak, merged_prs=prs)
         print(f"  • LV.{stats['level']} | {stats['xp']:,} XP | {stats['xp_pct']}% to next")
 
         svg = generate_svg(stats)
