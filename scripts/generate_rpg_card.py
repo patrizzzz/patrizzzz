@@ -226,29 +226,8 @@ def generate_svg(s):
     {get_style()}
     <rect width="{W}" height="{H}" rx="15" class="base"/>
     
-    <!-- Top Section -->
-    <g transform="translate(40, 40)">
-        <!-- Profile Placeholder/Icon -->
-        <rect width="80" height="80" rx="12" class="tag-bg" style="stroke: #0891b2; stroke-width: 2;"/>
-        <path d="M40 30C45.5228 30 50 34.4772 50 40C50 45.5228 45.5228 50 40 50C34.4772 50 30 45.5228 30 40C30 34.4772 34.4772 30 40 30Z" stroke="#0891b2" stroke-width="2.5"/>
-        <path d="M25 58C25 54 30 51 40 51C50 51 55 54 55 58V62H25V58Z" stroke="#0891b2" stroke-width="2.5"/>
-        
-        <g transform="translate(110, 5)">
-            <text x="0" y="8" class="text subheader">⚔ SOFTWARE DEVELOPER</text>
-            <text x="0" y="42" class="text header">PATRIZZZZ</text>
-            
-            <g transform="translate(0, 55)">
-                <rect width="60" height="24" rx="4" class="lvl-badge"/>
-                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL {s["level"]:02d}</text>
-                <text x="75" y="17" class="text label" style="fill: #8b949e;">Class: <tspan style="fill: #ffffff;">Full-Stack Mage</tspan></text>
-            </g>
-        </g>
-    </g>
-
-    <line x1="40" y1="150" x2="{W-40}" y2="150" stroke="#333" stroke-dasharray="4 4"/>
-
     <!-- Core Stats Section -->
-    <g transform="translate(40, 185)">
+    <g transform="translate(40, 40)">
         <text x="0" y="0" class="text subheader">── CORE STATS ─────────────────────</text>
         
         <!-- Column 1 -->
@@ -292,6 +271,27 @@ def generate_svg(s):
                 <text x="320" y="0" class="text value" text-anchor="end">{s["VIT"]}</text>
                 <rect y="10" width="320" height="8" class="bar-bg"/>
                 <rect y="10" width="{get_bar_w(s["VIT"])}" height="8" style="fill: #06b6d4; rx: 3;"/>
+            </g>
+        </g>
+    </g>
+
+    <line x1="40" y1="180" x2="{W-40}" y2="180" stroke="#333" stroke-dasharray="4 4"/>
+
+    <!-- Top Section -->
+    <g transform="translate(40, 215)">
+        <!-- Profile Placeholder/Icon -->
+        <rect width="80" height="80" rx="12" class="tag-bg" style="stroke: #0891b2; stroke-width: 2;"/>
+        <path d="M40 30C45.5228 30 50 34.4772 50 40C50 45.5228 45.5228 50 40 50C34.4772 50 30 45.5228 30 40C30 34.4772 34.4772 30 40 30Z" stroke="#0891b2" stroke-width="2.5"/>
+        <path d="M25 58C25 54 30 51 40 51C50 51 55 54 55 58V62H25V58Z" stroke="#0891b2" stroke-width="2.5"/>
+        
+        <g transform="translate(110, 5)">
+            <text x="0" y="8" class="text subheader">⚔ SOFTWARE DEVELOPER</text>
+            <text x="0" y="42" class="text header">PATRIZZZZ</text>
+            
+            <g transform="translate(0, 55)">
+                <rect width="60" height="24" rx="4" class="lvl-badge"/>
+                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL {s["level"]:02d}</text>
+                <text x="75" y="17" class="text label" style="fill: #8b949e;">Class: <tspan style="fill: #ffffff;">Full-Stack Mage</tspan></text>
             </g>
         </g>
     </g>
