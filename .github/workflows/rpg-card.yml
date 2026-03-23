@@ -35,6 +35,6 @@ jobs:
         run: |
           git config --global user.name "rpg-card-bot"
           git config --global user.email "actions@github.com"
-          git add README.md
+          git add README.md rpg-card.svg
           git diff --cached --quiet || git commit -m "⚔️ chore: update RPG character card [skip ci]"
           git push

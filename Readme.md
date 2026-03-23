@@ -70,64 +70,8 @@ class Patrick:
 
 <!--RPG_CARD_START-->
 <div align="center">
-
-```
-╔══════════════════════════════════════════════════════╗
-║            ⚔  DEVELOPER CHARACTER CARD  ⚔            ║
-╚══════════════════════════════════════════════════════╝
-```
-
+  <img src="./rpg-card.svg" alt="RPG Character Card" width="100%" />
 </div>
-
-<div align="center">
-
-| | | |
-|:---:|:---:|:---:|
-| **NAME** | **CLASS** | **SERVER** |
-| `PATRICK` | `Full-Stack Mage` | `PH-01` |
-| **LEVEL** | **TOTAL XP** | **STREAK** |
-| `LV. 01` | `0 XP` | `0 days 🔥` |
-
-</div>
-
-<div align="center">
-
-```
-── CORE STATS ──────────────────────────────────────────
-```
-
-| Stat | Attribute | Progress | Value |
-|:----:|:----------|:---------|------:|
-| `STR` | **Backend Power** | `░░░░░░░░░░░░░░░░░░░░` | **0**/99 |
-| `INT` | **AI / ML Intel** | `░░░░░░░░░░░░░░░░░░░░` | **0**/99 |
-| `DEX` | **Mobile Agility** | `░░░░░░░░░░░░░░░░░░░░` | **0**/99 |
-| `WIS` | **Frontend Wisdom** | `░░░░░░░░░░░░░░░░░░░░` | **0**/99 |
-| `AGI` | **DevOps Finesse** | `░░░░░░░░░░░░░░░░░░░░` | **0**/99 |
-| `VIT` | **Commit Vitality** | `░░░░░░░░░░░░░░░░░░░░` | **0**/99 |
-
-</div>
-
-<div align="center">
-
-```
-── EXPERIENCE ──────────────────────────────────────────
-  LV.01  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]  LV.02
-        Progress to next level: 0%
-── ACHIEVEMENTS ────────────────────────────────────────
-  ★     0 stars earned        ⚔     0 total commits
-  ⚡     0 original repos      🔥     0 day streak
-── EQUIPPED SKILLS ─────────────────────────────────────
-  [Python] [Django] [Flask] [PostgreSQL] [Firebase]
-  [TensorFlow] [PyTorch] [scikit-learn]
-  [Kotlin] [Android] [JavaScript] [HTML] [CSS]
-```
-
-</div>
-
-<div align="center">
-  <sub><code>// last synced: never · run the workflow to initialize</code></sub>
-</div>
-
 <!--RPG_CARD_END-->
 
 ---

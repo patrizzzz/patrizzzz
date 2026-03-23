@@ -1,0 +1,189 @@
+<svg width="840" height="560" viewBox="0 0 840 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <style>
+        .base { fill: #1a1a1a; stroke: #333; stroke-width: 1; }
+        .text { font-family: 'JetBrains Mono', 'Segoe UI', monospace; fill: #c9d1d9; }
+        .header { font-size: 24px; font-weight: 700; fill: #ffffff; }
+        .subheader { font-size: 14px; fill: #8b949e; text-transform: uppercase; letter-spacing: 1px; }
+        .label { font-size: 14px; font-weight: 600; fill: #c9d1d9; }
+        .value { font-size: 14px; font-weight: 700; fill: #ffffff; }
+        .lvl-badge { fill: #0d1117; stroke: #0891b2; stroke-width: 1.5; }
+        .lvl-text { font-size: 13px; font-weight: 800; fill: #0891b2; }
+        .stat-bg { fill: #2d2d2d; rx: 4; }
+        .bar-bg { fill: #121212; rx: 3; }
+        .xp-bg { fill: #121212; rx: 5; }
+        .tag-bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 4; }
+        .tag-text { font-size: 11px; font-weight: 600; }
+        .footer-text { font-size: 11px; fill: #8b949e; }
+        .status-dot { fill: #10b981; }
+    </style>
+    
+    <rect width="840" height="560" rx="15" class="base"/>
+    
+    <!-- Top Section -->
+    <g transform="translate(40, 40)">
+        <!-- Profile Placeholder/Icon -->
+        <rect width="80" height="80" rx="12" class="tag-bg" style="stroke: #0891b2; stroke-width: 2;"/>
+        <path d="M40 30C45.5228 30 50 34.4772 50 40C50 45.5228 45.5228 50 40 50C34.4772 50 30 45.5228 30 40C30 34.4772 34.4772 30 40 30Z" stroke="#0891b2" stroke-width="2.5"/>
+        <path d="M25 58C25 54 30 51 40 51C50 51 55 54 55 58V62H25V58Z" stroke="#0891b2" stroke-width="2.5"/>
+        
+        <g transform="translate(110, 5)">
+            <text x="0" y="8" class="text subheader">⚔ SOFTWARE DEVELOPER &amp; AI ENGINEER</text>
+            <text x="0" y="42" class="text header">PATRICK</text>
+            
+            <g transform="translate(0, 55)">
+                <rect width="60" height="24" rx="4" class="lvl-badge"/>
+                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL 42</text>
+                <text x="75" y="17" class="text label" style="fill: #8b949e;">Class: <tspan style="fill: #ffffff;">Full-Stack Mage</tspan></text>
+            </g>
+        </g>
+    </g>
+
+    <line x1="40" y1="150" x2="800" y2="150" stroke="#333" stroke-dasharray="4 4"/>
+
+    <!-- Core Stats Section -->
+    <g transform="translate(40, 185)">
+        <text x="0" y="0" class="text subheader">── CORE STATS ─────────────────────</text>
+        
+        <!-- Column 1 -->
+        <g transform="translate(0, 35)">
+            <text x="0" y="0" class="text label">STR Backend</text>
+            <text x="320" y="0" class="text value" text-anchor="end">88</text>
+            <rect y="10" width="320" height="8" class="bar-bg"/>
+            <rect y="10" width="281.6" height="8" style="fill: #0891b2; rx: 3;"/>
+            
+            <g transform="translate(0, 45)">
+                <text x="0" y="0" class="text label">DEX Mobile</text>
+                <text x="320" y="0" class="text value" text-anchor="end">74</text>
+                <rect y="10" width="320" height="8" class="bar-bg"/>
+                <rect y="10" width="236.8" height="8" style="fill: #10b981; rx: 3;"/>
+            </g>
+            
+            <g transform="translate(0, 90)">
+                <text x="0" y="0" class="text label">AGI DevOps</text>
+                <text x="320" y="0" class="text value" text-anchor="end">58</text>
+                <rect y="10" width="320" height="8" class="bar-bg"/>
+                <rect y="10" width="185.6" height="8" style="fill: #ef4444; rx: 3;"/>
+            </g>
+        </g>
+        
+        <!-- Column 2 -->
+        <g transform="translate(400, 35)">
+            <text x="0" y="0" class="text label">INT AI / ML</text>
+            <text x="320" y="0" class="text value" text-anchor="end">82</text>
+            <rect y="10" width="320" height="8" class="bar-bg"/>
+            <rect y="10" width="262.4" height="8" style="fill: #7c3aed; rx: 3;"/>
+            
+            <g transform="translate(0, 45)">
+                <text x="0" y="0" class="text label">WIS Frontend</text>
+                <text x="320" y="0" class="text value" text-anchor="end">66</text>
+                <rect y="10" width="320" height="8" class="bar-bg"/>
+                <rect y="10" width="211.20000000000002" height="8" style="fill: #f59e0b; rx: 3;"/>
+            </g>
+            
+            <g transform="translate(0, 90)">
+                <text x="0" y="0" class="text label">VIT Commits</text>
+                <text x="320" y="0" class="text value" text-anchor="end">95</text>
+                <rect y="10" width="320" height="8" class="bar-bg"/>
+                <rect y="10" width="304.0" height="8" style="fill: #06b6d4; rx: 3;"/>
+            </g>
+        </g>
+    </g>
+
+    <!-- Experience Section -->
+    <g transform="translate(40, 355)">
+        <text x="0" y="0" class="text subheader">── EXPERIENCE ─────────────────────</text>
+        <text x="0" y="30" class="text label" style="font-weight: 700;">Overall Progress</text>
+        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">72% → LVL 43</text>
+        
+        <rect y="40" width="760" height="14" class="xp-bg"/>
+        <rect y="40" width="547.1999999999999" height="14" style="fill: url(#xp-grad); rx: 5;"/>
+        <defs>
+            <linearGradient id="xp-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3b82f6" />
+                <stop offset="100%" stop-color="#8b5cf6" />
+            </linearGradient>
+        </defs>
+        
+        <text x="0" y="72" class="footer-text">0 XP</text>
+        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 72,450 XP</text>
+        <text x="760" y="72" class="footer-text" text-anchor="end">100,000 XP</text>
+    </g>
+
+    <!-- Skills Section -->
+    <g transform="translate(40, 450)">
+        <text x="0" y="-45" class="text subheader">── EQUIPPED SKILLS ─────────────────</text>
+        
+        <g transform="translate(40, 435)">
+            <rect width="68" height="24" class="tag-bg" style="stroke: #0891b2; opacity: 0.6;"/>
+            <text x="34.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #0891b2;">Python</text>
+        </g>
+        
+        <g transform="translate(118, 435)">
+            <rect width="68" height="24" class="tag-bg" style="stroke: #0891b2; opacity: 0.6;"/>
+            <text x="34.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #0891b2;">Django</text>
+        </g>
+        
+        <g transform="translate(196, 435)">
+            <rect width="60" height="24" class="tag-bg" style="stroke: #0891b2; opacity: 0.6;"/>
+            <text x="30.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #0891b2;">Flask</text>
+        </g>
+        
+        <g transform="translate(266, 435)">
+            <rect width="100" height="24" class="tag-bg" style="stroke: #0891b2; opacity: 0.6;"/>
+            <text x="50.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #0891b2;">PostgreSQL</text>
+        </g>
+        
+        <g transform="translate(40, 470)">
+            <rect width="100" height="24" class="tag-bg" style="stroke: #7c3aed; opacity: 0.6;"/>
+            <text x="50.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #7c3aed;">TensorFlow</text>
+        </g>
+        
+        <g transform="translate(150, 470)">
+            <rect width="76" height="24" class="tag-bg" style="stroke: #7c3aed; opacity: 0.6;"/>
+            <text x="38.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #7c3aed;">PyTorch</text>
+        </g>
+        
+        <g transform="translate(236, 470)">
+            <rect width="116" height="24" class="tag-bg" style="stroke: #7c3aed; opacity: 0.6;"/>
+            <text x="58.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #7c3aed;">scikit-learn</text>
+        </g>
+        
+        <g transform="translate(362, 470)">
+            <rect width="68" height="24" class="tag-bg" style="stroke: #10b981; opacity: 0.6;"/>
+            <text x="34.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #10b981;">Kotlin</text>
+        </g>
+        
+        <g transform="translate(40, 505)">
+            <rect width="76" height="24" class="tag-bg" style="stroke: #10b981; opacity: 0.6;"/>
+            <text x="38.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #10b981;">Android</text>
+        </g>
+        
+        <g transform="translate(126, 505)">
+            <rect width="84" height="24" class="tag-bg" style="stroke: #10b981; opacity: 0.6;"/>
+            <text x="42.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #10b981;">Firebase</text>
+        </g>
+        
+        <g transform="translate(220, 505)">
+            <rect width="100" height="24" class="tag-bg" style="stroke: #f59e0b; opacity: 0.6;"/>
+            <text x="50.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #f59e0b;">JavaScript</text>
+        </g>
+        
+        <g transform="translate(330, 505)">
+            <rect width="84" height="24" class="tag-bg" style="stroke: #f59e0b; opacity: 0.6;"/>
+            <text x="42.0" y="16" class="text tag-text" text-anchor="middle" style="fill: #f59e0b;">HTML/CSS</text>
+        </g>
+        
+    </g>
+
+    <line x1="40" y1="525" x2="800" y2="525" stroke="#333" stroke-dasharray="4 4"/>
+
+    <!-- Footer -->
+    <g transform="translate(40, 545)">
+        <circle cx="5" cy="-4" r="3" class="status-dot"/>
+        <text x="15" y="0" class="footer-text">Active – Building in public</text>
+        
+        <text x="760" y="0" class="footer-text" text-anchor="end">github.com/patrizzzz</text>
+        <text x="660" y="0" class="footer-text" text-anchor="end">Server: PH-01</text>
+    </g>
+</svg>
