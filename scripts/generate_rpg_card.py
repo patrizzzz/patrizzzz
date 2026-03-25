@@ -5,6 +5,7 @@ Fetches real GitHub stats and maps them to RPG-style stats.
 
 import os
 import re
+import math
 import requests
 from datetime import datetime, timezone
 
@@ -77,9 +78,9 @@ def get_contribution_streak():
         days  = [d for w in cal["weeks"] for d in w["contributionDays"]]
 
         # Calculate current streak (count from today backwards)
-        today     = datetime.now(timezone.utc).date().isoformat()
-        streak    = 0
-        active    = False
+        today  = datetime.now(timezone.utc).date().isoformat()
+        streak = 0
+        active = False
         for day in reversed(days):
             if day["date"] > today:
                 continue
@@ -113,7 +114,8 @@ STAT_LANG_MAP = {
     "AGI": ["Shell", "Dockerfile", "HCL", "YAML"],        # devops / infra
 }
 
-def calc_stats(repos, commits, streak):
+# ✅ FIX 1: Added merged_prs as a proper parameter instead of kwargs
+def calc_stats(repos, commits, streak, merged_prs=0):
     # Total stars and forks
     total_stars = sum(r.get("stargazers_count", 0) for r in repos)
     total_forks = sum(r.get("forks_count", 0) for r in repos)
@@ -144,14 +146,12 @@ def calc_stats(repos, commits, streak):
     vit_val = min(int(commits / 50) + 40, 99)
 
     # XP = stars × 200 + forks × 100 + commits × 10 + merged_prs × 50
-    merged_prs = kwargs.get("merged_prs", 0)
     xp = total_stars * 200 + total_forks * 100 + commits * 10 + merged_prs * 50
 
     # Level = sqrt(xp / 1000) capped at 99
-    import math
     level = min(int(math.sqrt(xp / 1000)) + 1, 99)
 
-    # XP progress to next level: what % of the way to the next level threshold
+    # XP progress to next level
     current_threshold = (level - 1) ** 2 * 1000
     next_threshold    = level ** 2 * 1000
     xp_pct = int((xp - current_threshold) / max(next_threshold - current_threshold, 1) * 100)
@@ -199,7 +199,7 @@ def generate_svg(s):
     def get_bar_w(val, max_w=320):
         return (val / 100) * max_w
 
-    # Skill tags helper (limit to 12 for layout)
+    # Skill tags
     all_skills = [
         ("Python", "#0891b2"), ("Django", "#0891b2"), ("Flask", "#0891b2"), ("PostgreSQL", "#0891b2"),
         ("TensorFlow", "#7c3aed"), ("PyTorch", "#7c3aed"), ("scikit-learn", "#7c3aed"),
@@ -210,7 +210,7 @@ def generate_svg(s):
     skill_tags = ""
     x_off, y_off = 0, 25
     for i, (name, color) in enumerate(all_skills):
-        if i == 4 or i == 8: # wrap to next line
+        if i == 4 or i == 8:
             x_off = 0
             y_off += 35
         tag_w = len(name) * 8 + 20
@@ -228,7 +228,6 @@ def generate_svg(s):
     
     <!-- Top Section -->
     <g transform="translate(40, 40)">
-        <!-- Profile Placeholder/Icon -->
         <rect width="80" height="80" rx="12" class="tag-bg" style="stroke: #0891b2; stroke-width: 2;"/>
         <path d="M40 30C45.5228 30 50 34.4772 50 40C50 45.5228 45.5228 50 40 50C34.4772 50 30 45.5228 30 40C30 34.4772 34.4772 30 40 30Z" stroke="#0891b2" stroke-width="2.5"/>
         <path d="M25 58C25 54 30 51 40 51C50 51 55 54 55 58V62H25V58Z" stroke="#0891b2" stroke-width="2.5"/>
@@ -251,7 +250,6 @@ def generate_svg(s):
     <g transform="translate(40, 185)">
         <text x="0" y="0" class="text subheader">── CORE STATS ─────────────────────</text>
         
-        <!-- Column 1 -->
         <g transform="translate(0, 35)">
             <text x="0" y="0" class="text label">STR Backend</text>
             <text x="320" y="0" class="text value" text-anchor="end">{s["STR"]}</text>
@@ -273,7 +271,6 @@ def generate_svg(s):
             </g>
         </g>
         
-        <!-- Column 2 -->
         <g transform="translate(400, 35)">
             <text x="0" y="0" class="text label">INT AI / ML</text>
             <text x="320" y="0" class="text value" text-anchor="end">{s["INT"]}</text>
@@ -328,7 +325,6 @@ def generate_svg(s):
     <g transform="translate(40, 635)">
         <circle cx="5" cy="-4" r="3" class="status-dot"/>
         <text x="15" y="0" class="footer-text">Active – Building in public</text>
-        
         <text x="{W-80}" y="0" class="footer-text" text-anchor="end">github.com/patrizzzz</text>
         <text x="{W-180}" y="0" class="footer-text" text-anchor="end">Server: PH-01</text>
     </g>
@@ -338,15 +334,19 @@ def generate_svg(s):
 # ── README patcher ────────────────────────────────────────────────────────────
 
 def patch_readme(svg_content: str, path: str = "README.md"):
-    # Save the SVG (path relative to repo root)
+    # Save the SVG
     svg_path = "rpg-card.svg"
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
-    
-    with open(path, "r", encoding="utf-8") as f:
-        content = f.read()
 
-    # Create the new block to insert into README
+    # ✅ FIX 2: Handle missing README.md gracefully
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            content = f.read()
+    except FileNotFoundError:
+        content = ""  # Start fresh if README doesn't exist yet
+
+    # Create the new block
     new_block = (
         "<!--RPG_CARD_START-->\n"
         '<div align="center">\n'
@@ -355,11 +355,11 @@ def patch_readme(svg_content: str, path: str = "README.md"):
         "<!--RPG_CARD_END-->"
     )
 
-    # Remove existing RPG_CARD block(s) if any
+    # Remove existing RPG_CARD block if any
     pattern = r"<!--RPG_CARD_START-->.*?<!--RPG_CARD_END-->"
     content = re.sub(pattern, "", content, flags=re.DOTALL).strip()
-    
-    # Prepend the new block to the top of the file
+
+    # Prepend new block to top
     content = f"{new_block}\n\n{content}"
 
     with open(path, "w", encoding="utf-8") as f:
@@ -372,8 +372,6 @@ def patch_readme(svg_content: str, path: str = "README.md"):
 if __name__ == "__main__":
     print(f"🎮 Fetching stats for @{USERNAME}...")
 
-    # NOTE: In a real run, these values come from GitHub API.
-    # We'll use the same fetchers as before.
     try:
         user    = get_user()
         repos   = get_repos()
@@ -383,6 +381,7 @@ if __name__ == "__main__":
 
         print(f"  • {len(repos)} repos | {commits} commits | {prs} PRs | {streak}d streak")
 
+        # ✅ FIX 1: merged_prs passed correctly as keyword argument
         stats = calc_stats(repos, commits, streak, merged_prs=prs)
         print(f"  • LV.{stats['level']} | {stats['xp']:,} XP | {stats['xp_pct']}% to next")
 
@@ -390,5 +389,4 @@ if __name__ == "__main__":
         patch_readme(svg)
     except Exception as e:
         print(f"❌ Error generating RPG card: {e}")
-        # For local testing if API fails (e.g. no token)
-        pass
+        raise  # ✅ Re-raise so GitHub Actions shows the real error
