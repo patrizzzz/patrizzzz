@@ -22,7 +22,6 @@
     
     <!-- Top Section -->
     <g transform="translate(40, 40)">
-        <!-- Profile Placeholder/Icon -->
         <rect width="80" height="80" rx="12" class="tag-bg" style="stroke: #0891b2; stroke-width: 2;"/>
         <path d="M40 30C45.5228 30 50 34.4772 50 40C50 45.5228 45.5228 50 40 50C34.4772 50 30 45.5228 30 40C30 34.4772 34.4772 30 40 30Z" stroke="#0891b2" stroke-width="2.5"/>
         <path d="M25 58C25 54 30 51 40 51C50 51 55 54 55 58V62H25V58Z" stroke="#0891b2" stroke-width="2.5"/>
@@ -33,7 +32,7 @@
             
             <g transform="translate(0, 55)">
                 <rect width="60" height="24" rx="4" class="lvl-badge"/>
-                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL 02</text>
+                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL 03</text>
                 <text x="75" y="17" class="text label" style="fill: #8b949e;">Class: <tspan style="fill: #ffffff;">Full-Stack Mage</tspan></text>
             </g>
         </g>
@@ -45,7 +44,6 @@
     <g transform="translate(40, 185)">
         <text x="0" y="0" class="text subheader">── CORE STATS ─────────────────────</text>
         
-        <!-- Column 1 -->
         <g transform="translate(0, 35)">
             <text x="0" y="0" class="text label">STR Backend</text>
             <text x="320" y="0" class="text value" text-anchor="end">99</text>
@@ -67,7 +65,6 @@
             </g>
         </g>
         
-        <!-- Column 2 -->
         <g transform="translate(400, 35)">
             <text x="0" y="0" class="text label">INT AI / ML</text>
             <text x="320" y="0" class="text value" text-anchor="end">30</text>
@@ -83,9 +80,9 @@
             
             <g transform="translate(0, 90)">
                 <text x="0" y="0" class="text label">VIT Commits</text>
-                <text x="320" y="0" class="text value" text-anchor="end">42</text>
+                <text x="320" y="0" class="text value" text-anchor="end">43</text>
                 <rect y="10" width="320" height="8" class="bar-bg"/>
-                <rect y="10" width="134.4" height="8" style="fill: #06b6d4; rx: 3;"/>
+                <rect y="10" width="137.6" height="8" style="fill: #06b6d4; rx: 3;"/>
             </g>
         </g>
     </g>
@@ -94,10 +91,10 @@
     <g transform="translate(40, 355)">
         <text x="0" y="0" class="text subheader">── EXPERIENCE ─────────────────────</text>
         <text x="0" y="30" class="text label" style="font-weight: 700;">Overall Progress</text>
-        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">48% → LVL 3</text>
+        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">2% → LVL 4</text>
         
         <rect y="40" width="760" height="14" class="xp-bg"/>
-        <rect y="40" width="364.8" height="14" style="fill: url(#xp-grad); rx: 5;"/>
+        <rect y="40" width="15.200000000000001" height="14" style="fill: url(#xp-grad); rx: 5;"/>
         <defs>
             <linearGradient id="xp-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#3b82f6" />
@@ -106,7 +103,7 @@
         </defs>
         
         <text x="0" y="72" class="footer-text">0 XP</text>
-        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 2,440 XP</text>
+        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 4,140 XP</text>
         <text x="760" y="72" class="footer-text" text-anchor="end">100,000 XP</text>
     </g>
 
@@ -182,7 +179,6 @@
     <g transform="translate(40, 635)">
         <circle cx="5" cy="-4" r="3" class="status-dot"/>
         <text x="15" y="0" class="footer-text">Active – Building in public</text>
-        
         <text x="760" y="0" class="footer-text" text-anchor="end">github.com/patrizzzz</text>
         <text x="660" y="0" class="footer-text" text-anchor="end">Server: PH-01</text>
     </g>
