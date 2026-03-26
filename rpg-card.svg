@@ -32,7 +32,7 @@
             
             <g transform="translate(0, 55)">
                 <rect width="60" height="24" rx="4" class="lvl-badge"/>
-                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL 03</text>
+                <text x="30" y="17" class="text lvl-text" text-anchor="middle">LVL 02</text>
                 <text x="75" y="17" class="text label" style="fill: #8b949e;">Class: <tspan style="fill: #ffffff;">Full-Stack Mage</tspan></text>
             </g>
         </g>
@@ -46,9 +46,9 @@
         
         <g transform="translate(0, 35)">
             <text x="0" y="0" class="text label">STR Backend</text>
-            <text x="320" y="0" class="text value" text-anchor="end">99</text>
+            <text x="320" y="0" class="text value" text-anchor="end">77</text>
             <rect y="10" width="320" height="8" class="bar-bg"/>
-            <rect y="10" width="316.8" height="8" style="fill: #0891b2; rx: 3;"/>
+            <rect y="10" width="246.4" height="8" style="fill: #0891b2; rx: 3;"/>
             
             <g transform="translate(0, 45)">
                 <text x="0" y="0" class="text label">DEX Mobile</text>
@@ -80,9 +80,9 @@
             
             <g transform="translate(0, 90)">
                 <text x="0" y="0" class="text label">VIT Commits</text>
-                <text x="320" y="0" class="text value" text-anchor="end">43</text>
+                <text x="320" y="0" class="text value" text-anchor="end">41</text>
                 <rect y="10" width="320" height="8" class="bar-bg"/>
-                <rect y="10" width="137.6" height="8" style="fill: #06b6d4; rx: 3;"/>
+                <rect y="10" width="131.2" height="8" style="fill: #06b6d4; rx: 3;"/>
             </g>
         </g>
     </g>
@@ -91,10 +91,10 @@
     <g transform="translate(40, 355)">
         <text x="0" y="0" class="text subheader">── EXPERIENCE ─────────────────────</text>
         <text x="0" y="30" class="text label" style="font-weight: 700;">Overall Progress</text>
-        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">3% → LVL 4</text>
+        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">24% → LVL 3</text>
         
         <rect y="40" width="760" height="14" class="xp-bg"/>
-        <rect y="40" width="22.8" height="14" style="fill: url(#xp-grad); rx: 5;"/>
+        <rect y="40" width="182.4" height="14" style="fill: url(#xp-grad); rx: 5;"/>
         <defs>
             <linearGradient id="xp-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#3b82f6" />
@@ -103,7 +103,7 @@
         </defs>
         
         <text x="0" y="72" class="footer-text">0 XP</text>
-        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 4,150 XP</text>
+        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,720 XP</text>
         <text x="760" y="72" class="footer-text" text-anchor="end">100,000 XP</text>
     </g>
 
