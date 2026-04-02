@@ -46,9 +46,9 @@
         
         <g transform="translate(0, 35)">
             <text x="0" y="0" class="text label">STR Backend</text>
-            <text x="320" y="0" class="text value" text-anchor="end">77</text>
+            <text x="320" y="0" class="text value" text-anchor="end">75</text>
             <rect y="10" width="320" height="8" class="bar-bg"/>
-            <rect y="10" width="246.4" height="8" style="fill: #0891b2; rx: 3;"/>
+            <rect y="10" width="240.0" height="8" style="fill: #0891b2; rx: 3;"/>
             
             <g transform="translate(0, 45)">
                 <text x="0" y="0" class="text label">DEX Mobile</text>
@@ -103,7 +103,7 @@
         </defs>
         
         <text x="0" y="72" class="footer-text">0 XP</text>
-        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,720 XP</text>
+        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,730 XP</text>
         <text x="760" y="72" class="footer-text" text-anchor="end">100,000 XP</text>
     </g>
 
