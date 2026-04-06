@@ -103,7 +103,7 @@
         </defs>
         
         <text x="0" y="72" class="footer-text">0 XP</text>
-        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,730 XP</text>
+        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,740 XP</text>
         <text x="760" y="72" class="footer-text" text-anchor="end">100,000 XP</text>
     </g>
 
