@@ -126,8 +126,11 @@ def calc_stats(repos, commits, streak, merged_prs=0):
         if repo.get("fork"):
             continue
         r = requests.get(repo["languages_url"], headers=HEADERS)
-        for lang, count in r.json().items():
-            lang_bytes[lang] = lang_bytes.get(lang, 0) + count
+        data = r.json()
+        if isinstance(data, dict):
+            for lang, count in data.items():
+                if isinstance(count, int):
+                    lang_bytes[lang] = lang_bytes.get(lang, 0) + count
 
     total_bytes = sum(lang_bytes.values()) or 1
 
@@ -389,4 +392,6 @@ if __name__ == "__main__":
         patch_readme(svg)
     except Exception as e:
         print(f"❌ Error generating RPG card: {e}")
+        import traceback
+        traceback.print_exc()
         raise  # ✅ Re-raise so GitHub Actions shows the real error
