@@ -80,9 +80,9 @@
             
             <g transform="translate(0, 90)">
                 <text x="0" y="0" class="text label">VIT Commits</text>
-                <text x="320" y="0" class="text value" text-anchor="end">41</text>
+                <text x="320" y="0" class="text value" text-anchor="end">42</text>
                 <rect y="10" width="320" height="8" class="bar-bg"/>
-                <rect y="10" width="131.2" height="8" style="fill: #06b6d4; rx: 3;"/>
+                <rect y="10" width="134.4" height="8" style="fill: #06b6d4; rx: 3;"/>
             </g>
         </g>
     </g>
@@ -91,10 +91,10 @@
     <g transform="translate(40, 355)">
         <text x="0" y="0" class="text subheader">── EXPERIENCE ─────────────────────</text>
         <text x="0" y="30" class="text label" style="font-weight: 700;">Overall Progress</text>
-        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">24% → LVL 3</text>
+        <text x="760" y="30" class="text value" text-anchor="end" style="fill: #06b6d4;">25% → LVL 3</text>
         
         <rect y="40" width="760" height="14" class="xp-bg"/>
-        <rect y="40" width="182.4" height="14" style="fill: url(#xp-grad); rx: 5;"/>
+        <rect y="40" width="190.0" height="14" style="fill: url(#xp-grad); rx: 5;"/>
         <defs>
             <linearGradient id="xp-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#3b82f6" />
@@ -103,7 +103,7 @@
         </defs>
         
         <text x="0" y="72" class="footer-text">0 XP</text>
-        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,740 XP</text>
+        <text x="380.0" y="72" class="footer-text" text-anchor="middle">Current: 1,750 XP</text>
         <text x="760" y="72" class="footer-text" text-anchor="end">100,000 XP</text>
     </g>
 
